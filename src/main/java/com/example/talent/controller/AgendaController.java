@@ -13,7 +13,7 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping("/agenda")
+@RequestMapping("/api/v1/agenda")
 public class AgendaController {
 
     private final ContactServiceImpl contactService;
