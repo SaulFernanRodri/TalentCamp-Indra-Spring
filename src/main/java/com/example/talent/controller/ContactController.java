@@ -48,16 +48,6 @@ public class ContactController {
         return ResponseEntity.created(uri).body(nuevoContact);
     }
 
-    @DeleteMapping(path = "{id}")
-    public ResponseEntity<HttpStatus> deleteContact(@PathVariable("id") Long id) {
-        Optional<Contact> contact = contactService.getContactById(id);
-        if (contact.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        contactService.deleteContact(contact.get().getId());
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
-
     @PutMapping(path = "{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Contact> updateContact(@PathVariable("id") Long id, @Valid @RequestBody Contact contact) {
         Optional<Contact> contactOptional = contactService.getContactById(id);
@@ -79,6 +69,15 @@ public class ContactController {
         return new ResponseEntity<>(updatedContact, HttpStatus.OK);
     }
 
+    @DeleteMapping(path = "{id}")
+    public ResponseEntity<HttpStatus> deleteContact(@PathVariable("id") Long id) {
+        Optional<Contact> contact = contactService.getContactById(id);
+        if (contact.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        contactService.deleteContact(contact.get().getId());
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 
     private URI createURIContact(Contact contact) {
         return ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}")
