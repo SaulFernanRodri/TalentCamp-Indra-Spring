@@ -1,5 +1,6 @@
-package com.example.talent.controller;
+package com.example.talent.integration;
 
+import com.example.talent.controller.ContactController;
 import com.example.talent.entity.Contact;
 import com.example.talent.service.ContactServiceImpl;
 import org.junit.jupiter.api.Test;
@@ -8,6 +9,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Arrays;
@@ -19,6 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.mockito.Mockito.*;
 
 @WebMvcTest(ContactController.class)
+@TestPropertySource(locations = "classpath:application-test.properties")
 class ContactControllerTest {
 
     @Autowired

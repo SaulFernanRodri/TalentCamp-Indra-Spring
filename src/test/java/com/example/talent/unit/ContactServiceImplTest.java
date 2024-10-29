@@ -1,12 +1,14 @@
-package com.example.talent.service;
+package com.example.talent.unit;
 
 import com.example.talent.entity.Contact;
 import com.example.talent.repository.ContactRepository;
+import com.example.talent.service.ContactServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.test.context.TestPropertySource;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+@TestPropertySource(locations = "classpath:application-test.properties")
 class ContactServiceImplTest {
 
     @InjectMocks
