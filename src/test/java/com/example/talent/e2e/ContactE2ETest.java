@@ -1,4 +1,4 @@
-package com.example.talent.integration;
+package com.example.talent.e2e;
 
 import com.example.talent.entity.Contact;
 import com.example.talent.repository.ContactRepository;
@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestPropertySource(locations="classpath:application-test.properties")
-public class ContactIntegrationTest {
+public class ContactE2ETest {
 
     @Autowired
     private TestRestTemplate restTemplate;
