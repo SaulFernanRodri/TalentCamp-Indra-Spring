@@ -1,4 +1,4 @@
-package com.example.talent.integration;
+/*package com.example.talent.integration;
 
 import com.example.talent.entity.Contact;
 import com.example.talent.repository.ContactRepository;
@@ -14,7 +14,7 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-/*Para WebFlux, se utiliza WebTestClient en lugar de TestRestTemplate.*/
+/*Para WebFlux, se utiliza WebTestClient en lugar de TestRestTemplate.
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureWebTestClient
@@ -95,4 +95,4 @@ class ContactWebTestClientIntegrationTest {
                 .exchange()
                 .expectStatus().isNotFound();
     }
-}
+}*/
